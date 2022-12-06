@@ -65,7 +65,7 @@ $RECYCLE.BIN/
 # Logs and databases
 ############################
 
-.tmp
+# .tmp descomentar una vez subido a PROD
 *.log
 *.sql
 *.sqlite
