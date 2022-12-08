@@ -1,0 +1,62 @@
+.infoCardContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.infoCard {
+  border: none;
+}
+
+.infoCardImgMobile,
+.infoCardImgDesktop {
+  border-radius: unset;
+}
+
+.infoCardBody {
+  border-bottom: 1px solid #c1ac97;
+  border-right: 1px solid #c1ac97;
+  border-left: 1px solid #c1ac97;
+}
+
+.infoCardText {
+  text-align: center;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+@media screen and (max-width: 767px) {
+  .infoCard {
+    width: 23rem;
+  }
+
+  .infoCardImgDesktop {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .infoCard {
+    flex-direction: row;
+    width: 65rem;
+  }
+
+  .infoCardBody {
+    border-top: 1px solid #c1ac97;
+    border-bottom: 1px solid #c1ac97;
+    border-right: 1px solid #c1ac97;
+    border-left: unset;
+    display: flex;
+    align-items: center;
+  }
+
+  .infoCardText {
+    text-align: left;
+    font-size: 1.25rem;
+    padding: 0 1rem;
+  }
+
+  .infoCardImgMobile {
+    display: none;
+  }
+}

@@ -1,0 +1,16 @@
+.menuToggler {
+  border: none !important;
+}
+
+.menuToggler:focus {
+  box-shadow: unset !important;
+}
+
+.navBarContainer {
+  color: #231f0a;
+  z-index: 999;
+}
+
+.navBarText {
+  color: #231f0a;
+}
