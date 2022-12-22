@@ -14,3 +14,13 @@
 .navBarText {
   color: #231f0a;
 }
+
+.navBarText:hover {
+  color: #231f0a;
+}
+
+@media screen and (min-width: 768px) {
+  .navBarText {
+    padding: 0 0.5rem;
+  }
+}
