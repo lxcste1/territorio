@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Container, Navbar, Nav } from 'react-bootstrap';
 import styles from '../../styles/Header.module.css';
 
@@ -6,7 +7,7 @@ export default function Header() {
     return (
       <Navbar expand="lg" className={styles.navBarContainer}>
         <Container>
-          <Navbar.Brand href="#home" className="headerLogo--container">
+          <Navbar.Brand href="/" className="headerLogo--container">
             <img
               alt=""
               src="https://via.placeholder.com/30x30"
@@ -22,8 +23,8 @@ export default function Header() {
           <Nav
             style={{ maxHeight: '100px' }}
             navbarScroll>
-            <Nav.Link href="#action1" className={styles.navBarText}>Servicios</Nav.Link>
-            <Nav.Link href="#action2" className={styles.navBarText}>Sobre nosotros</Nav.Link>
+            <Link href="/servicios" className={styles.navBarText}>Servicios</Link>
+            <Link href="#action2" className={styles.navBarText}>Sobre nosotros</Link>
           </Nav> 
           </Navbar.Collapse>
         </Container>

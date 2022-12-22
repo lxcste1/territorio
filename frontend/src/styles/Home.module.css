@@ -174,6 +174,11 @@
   border: 2px solid;
 }
 
+.homeButton:hover {
+  background-color: #231f0a;
+  border-color: #231f0a;
+}
+
 @media screen and (max-width: 767px) {
   .homeCardImgDesktop {
     display: none;
