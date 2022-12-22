@@ -1,0 +1,19 @@
+.footerContainer {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  align-items: center;
+}
+
+.footerIconFirst {
+  margin-left: 0;
+  margin-right: 0.1rem;
+}
+
+.footerIcon {
+  margin: 0 0.1rem;
+}
+
+.footerItem {
+  text-align: end;
+}
