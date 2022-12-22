@@ -1,5 +1,5 @@
 {
-  "name": "ecommerce-website",
+  "name": "backend",
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application",
@@ -11,16 +11,16 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "@strapi/strapi": "4.5.3",
-    "@strapi/plugin-users-permissions": "4.5.3",
-    "@strapi/plugin-i18n": "4.5.3",
+    "@strapi/strapi": "4.5.4",
+    "@strapi/plugin-users-permissions": "4.5.4",
+    "@strapi/plugin-i18n": "4.5.4",
     "better-sqlite3": "7.4.6"
   },
   "author": {
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "de710745-b9f4-4a55-8c3c-2d183e3006d4"
+    "uuid": "d51baa10-de01-44d1-a4ce-c15cff4a12e0"
   },
   "engines": {
     "node": ">=14.19.1 <=18.x.x",
