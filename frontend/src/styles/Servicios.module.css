@@ -1,0 +1,17 @@
+.ServicesTitle {
+  display: flex;
+  justify-content: center;
+  font-weight: 800;
+  margin: 1rem 0;
+}
+
+.ServicesShelf {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 767px) {
+  .ServicesShelf {
+    justify-content: center;
+  }
+}

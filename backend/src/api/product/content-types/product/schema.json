@@ -67,6 +67,9 @@
       "repeatable": true,
       "component": "variation.duration",
       "required": false
+    },
+    "profesional": {
+      "type": "string"
     }
   }
 }
