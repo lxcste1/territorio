@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_variation_durations",
+  "info": {
+    "displayName": "duration",
+    "icon": "clock"
+  },
+  "options": {},
+  "attributes": {
+    "variations": {
+      "type": "string"
+    }
+  }
+}
