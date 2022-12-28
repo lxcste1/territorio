@@ -7,6 +7,10 @@ import HomeTitle from "../components/HomeTitle/HomeTitle";
 
 export default function Home() {
 
+  const infoCardText = {
+    text:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis perferendis, natus vel ullam quod sit ea saepe vitae! Consectetur culpa accusamus officiis incidunt! Tempora voluptatem provident nobis sed facilis rerum?"
+  }
+
   return (
     <div>
       <Banner></Banner>
@@ -15,7 +19,7 @@ export default function Home() {
           <HomeTitle title="Café & pastelería" />
         </div>
         <div>
-          <InfoCard></InfoCard>
+          <InfoCard text={infoCardText}></InfoCard>
           <div className={styles.homeButtonContainer}>
             <ButtonCard url={`https://alacartaonline.com.ar/restaurant/6001b2e3feb46a6a4347c483`} buttonText="Ver Carta" />
           </div>
@@ -29,7 +33,7 @@ export default function Home() {
           <SectionCard />
         </div>
         <div className={styles.homeButtonContainer}>
-          <ButtonCard buttonText="Quiero ver todos" />
+          <ButtonCard buttonText="Quiero ver todos" url={`/servicios`}/>
         </div>
       </div>
     </div>

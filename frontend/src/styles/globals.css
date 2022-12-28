@@ -13,6 +13,11 @@
   src: url("/fonts/Aleo-Light.ttf");
 }
 
+@font-face {
+  font-family: "Calligraffitti-Regular";
+  src: url("/fonts/Calligraffitti-Regular.ttf");
+}
+
 html,
 body {
   padding: 0;

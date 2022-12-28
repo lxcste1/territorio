@@ -24,7 +24,7 @@ export default function Header() {
             style={{ maxHeight: '100px' }}
             navbarScroll>
             <Link href="/servicios" className={styles.navBarText}>Servicios</Link>
-            <Link href="#action2" className={styles.navBarText}>Sobre nosotros</Link>
+            <Link href="/sobre-nosotros" className={styles.navBarText}>Sobre nosotros</Link>
           </Nav> 
           </Navbar.Collapse>
         </Container>

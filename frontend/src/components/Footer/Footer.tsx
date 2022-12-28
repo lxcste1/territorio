@@ -13,6 +13,7 @@ export default function Footer() {
                         width={32}
                         height={32}
                         alt="Icono de Whatsapp"
+                        priority={true}
                         className={styles.footerIconFirst}>
                         </Image>
                         <Image 
