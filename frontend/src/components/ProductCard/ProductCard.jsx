@@ -4,8 +4,6 @@ import styles from '../../styles/ProductCard.module.css'
 
 const ProductCard = ( product ) => {
 
-    console.log(product)
-
     const productImg = product.attributes.attributes.thumbnail.data.attributes.url;
     const productDuration = product.attributes.attributes.variation[0].variations;
 
@@ -22,7 +20,8 @@ const ProductCard = ( product ) => {
                         className={styles.productCardClock}
                         src="/img/time.png"
                         width={16}
-                        height={16}></Image>
+                        height={16}
+                        alt="Reloj"></Image>
                         <p className={styles.productCardDuration}>{productDuration}</p>
                     </div>
                 </div>

@@ -70,6 +70,20 @@
     },
     "profesional": {
       "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Manicuría",
+        "Masajes",
+        "Depilación",
+        "Cuidado facial",
+        "Cejas y pestañas",
+        "Cuidado corporal",
+        "Circuito GOLD",
+        "Gift Platinum",
+        "Gift Black"
+      ]
     }
   }
 }

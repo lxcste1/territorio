@@ -1,43 +1,27 @@
 import { Container } from "react-bootstrap";
-import { useEffect, useState } from "react";
-import { Http } from "../api/api";
-import ProductCard from "../../components/ProductCard/ProductCard";
 import styles from '../../styles/Servicios.module.css';
-
+import ProductShelf from "../../components/ProductShelf/ProductShelf";
+import useFetch from '../../hooks/useFetch';
+import { useState } from "react";
 
 export default function Servicios () {
 
-  const [data, setData] = useState([]);
+  const {data} = useFetch("api/categories/")
 
-  const get_products = async () => {
-    const id = [];
-    try {
-      const response = await Http.get(`/api/products/${id}?populate=*`);
-      setData(response.data.data);
-    } catch (error) {
-      console.log(error)
-    }
-  };
-
-  useEffect(() => {
-    get_products();
-  }, []);
+  const [type, setType] = useState([]);
 
   return (
   <div>
     <Container>
       <h1 className={styles.ServicesTitle}>Cuidado & belleza</h1>
-      <div className={styles.ServicesShelf}>
-        {
-          data?.map((product)=> {
-            return (
-              <>
-                <ProductCard attributes={product}></ProductCard>
-              </>
-            )
-          })
-        }
-      </div>
+      {/* {
+        data?.map((attributes)=> {
+          console.log(attributes.attributes.name);
+          setType(attributes.attributes.name);
+        })
+      } */}
+    <ProductShelf type="Manicuría"></ProductShelf>
+    <ProductShelf type="Masajes"></ProductShelf>
   </Container>
   </div>
   );
