@@ -69,7 +69,7 @@ export default function Header() {
                                     {list("right")}
                                 </Drawer>
                             </Grid>
-                            <Grid item md={3} sx={{display:['none', 'block']}}>
+                            <Grid item md={3} sx={{display:['none', 'block'], textAlign:'end'}}>
                                     {pages.map((text) => (
                                         <Button key={text.name} href={text.slug} sx={{color:'#0F0E08', textTransform:'inherit', borderRadius:'8px', ":hover":{backgroundColor:'#FFF3E3'}}}>
                                             {text.name}
