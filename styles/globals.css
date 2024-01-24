@@ -2,26 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@font-face {
+    font-family: "Aleo-ExtraBold";
+    src: url("/fonts/Aleo-ExtraBold.ttf");
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+@font-face {
+    font-family: "Aleo-SemiBold";
+    src: url("/fonts/Aleo-SemiBold.ttf");
 }
+
+@font-face {
+    font-family: "Aleo-Bold";
+    src: url("/fonts/Aleo-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Aleo-Medium";
+    src: url("/fonts/Aleo-Medium.ttf");
+}
+  
+@font-face {
+    font-family: "Aleo-Regular";
+    src: url("/fonts/Aleo-Regular.ttf");
+}
+  
+@font-face {
+    font-family: "Aleo-Light";
+    src: url("/fonts/Aleo-Light.ttf");
+}
+
+@font-face {
+    font-family: "Aleo-Thin";
+    src: url("/fonts/Aleo-Thin.ttf");
+}
+  
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: 'Aleo-Regular'!important;
 }
