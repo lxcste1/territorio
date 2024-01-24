@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import Image from 'next/image';
 
-import { AppBar, Drawer, Box, Toolbar, Container, Button, Divider, Grid, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
+import { AppBar, Drawer, Box, Toolbar, Container, Button, Grid, List, ListItem, ListItemButton, ListItemText } from '@mui/material';
 
 import MenuIcon from '@mui/icons-material/Menu';
 
-const pages = ['Servicios', 'Sobre nosotros'];
+const pages = [{name:'Servicios', slug:'/servicios'}, {name:'Sobre nosotros', slug:'/sobre-nosotros'}];
 
 export default function Header() {
       const [state, setState] = React.useState({right: false});
@@ -28,9 +28,9 @@ export default function Header() {
         >
             <List>
                 {pages.map((text) => (
-                <ListItem key={text} disablePadding>
-                    <ListItemButton sx={{color:'#0F0E08', fontFamily:'Aleo-Regular'}}>
-                        {text}
+                <ListItem key={text.name} disablePadding>
+                    <ListItemButton sx={{color:'#0F0E08'}} href={text.slug}>
+                        <ListItemText primary={text.name} />
                     </ListItemButton>
                 </ListItem>
                 ))}
@@ -45,14 +45,17 @@ export default function Header() {
                     <Container sx={{color:"#0F0E08", fontWeight:"700"}}>
                         <Grid container sx={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
                             <Grid item md={9} xs={9} sx={{display:'flex', alignItems:'center'}}>
-                                <Image 
-                                    src={'/50x50.png'}
-                                    alt='Territorio Bohemian'
-                                    width={50}
-                                    height={50}
-                                    className='rounded-full mr-2'
-                                />
-                                Territorio Bohemian
+                                <Button href='/' sx={{color:'#0F0E08', textTransform:'inherit', borderRadius:'8px', ":hover":{backgroundColor:'unset'}}}>
+                                    <Image 
+                                        src={'/50x50.png'}
+                                        alt='Territorio Bohemian'
+                                        width={50}
+                                        height={50}
+                                        className='rounded-full mr-2'
+                                        priority
+                                    />
+                                    Territorio Bohemian
+                                </Button>
                             </Grid>
                             <Grid item xs={3} sx={{display:['flex', 'none'], justifyContent:'end'}}>
                                 <Button onClick={toggleDrawer("right", true)} sx={{color:'#0F0E08', minWidth:'unset', padding:'0'}}>
@@ -68,8 +71,8 @@ export default function Header() {
                             </Grid>
                             <Grid item md={3} sx={{display:['none', 'block']}}>
                                     {pages.map((text) => (
-                                        <Button key={text} sx={{color:'#0F0E08', fontFamily:'Aleo-Regular', textTransform:'inherit', borderRadius:'8px', ":hover":{backgroundColor:'#FFF3E3'}}}>
-                                            {text}
+                                        <Button key={text.name} href={text.slug} sx={{color:'#0F0E08', textTransform:'inherit', borderRadius:'8px', ":hover":{backgroundColor:'#FFF3E3'}}}>
+                                            {text.name}
                                         </Button>
                                     ))}
                             </Grid>
