@@ -11,6 +11,7 @@ export default function MainBanner() {
                 alt={'Imagen principal'}
                 width={1920}
                 height={600}
+                priority
             />
         </Grid>
         <Grid item sx={{display:['block', 'none']}}>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
 import Image from 'next/image';
 
@@ -9,15 +9,36 @@ import MenuIcon from '@mui/icons-material/Menu';
 const pages = [{name:'Servicios', slug:'/servicios'}, {name:'Sobre nosotros', slug:'/sobre-nosotros'}];
 
 export default function Header() {
-      const [state, setState] = React.useState({right: false});
-    
-  const toggleDrawer = (anchor, open) => (event) => {
-    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-      return;
-    }
+    const [state, setState] = useState({right: false});
+    const [isScrolled, setIsScrolled] = useState(false);
 
-    setState({ ...state, [anchor]: open });
-  };
+    useEffect(() => {
+        const handleScroll = () => {
+        const scrolled = window.scrollY > 0;
+            setIsScrolled(scrolled);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+      const headerStyle = {
+        backgroundColor: isScrolled ? 'white' : 'transparent',
+        boxShadow: isScrolled ? '' : 'none',
+        paddingY:'10px',
+        transition: 'background-color 0.4s ease-in-out',
+        };
+    
+    const toggleDrawer = (anchor, open) => (event) => {
+        if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+        return;
+        }
+
+        setState({ ...state, [anchor]: open });
+    };
 
     const list = (anchor) => (
         <Box
@@ -40,7 +61,7 @@ export default function Header() {
 
     return (
          <>
-            <AppBar sx={{backgroundColor:'transparent', boxShadow:'none', paddingY:'10px'}}>
+            <AppBar sx={headerStyle}>
                 <Toolbar sx={{padding:0}}>
                     <Container sx={{color:"#0F0E08", fontWeight:"700"}}>
                         <Grid container sx={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
