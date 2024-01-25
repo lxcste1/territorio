@@ -5,7 +5,7 @@ import { Card, CardMedia, CardContent, Typography } from '@mui/material'
 export default function InfoCard({data}) {
   return (
     <>
-        <Card sx={{display:['flex','none'], flexWrap:'wrap', justifyContent:'center', border:'none', boxShadow:'unset', borderRadius:'unset'}}>
+        <Card sx={{display:['flex','none'], flexWrap:'wrap', justifyContent:'center', border:'none', boxShadow:'unset', borderRadius:'unset', backgroundColor:'#f7f2ec'}}>
             <CardMedia sx={{maxWidth:"315px"}}>
                 <Image 
                     src={data.mobileImg}

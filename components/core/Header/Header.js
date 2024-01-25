@@ -29,7 +29,7 @@ export default function Header() {
         backgroundColor: isScrolled ? 'white' : 'transparent',
         boxShadow: isScrolled ? '' : 'none',
         paddingY:'10px',
-        transition: 'background-color 0.4s ease-in-out',
+        transition: 'background-color 0.2s ease-in-out',
         };
     
     const toggleDrawer = (anchor, open) => (event) => {
