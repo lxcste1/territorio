@@ -19,6 +19,7 @@ export default function MainBanner() {
                 alt={'Imagen principal'}
                 width={415}
                 height={315}
+                className='w-full'
             />    
         </Grid>
     </Grid>

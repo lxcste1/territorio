@@ -1,5 +1,7 @@
+import CTAButton from "@/components/CTAButton/CTAButton"
 import InfoCard from "@/components/InfoCard/InfoCard"
 import MainBanner from "@/components/MainBanner/MainBanner"
+import SectionCard from "@/components/SectionCard/SectionCard"
 import Title from "@/components/Title/Title"
 import { Container, Grid } from "@mui/material"
 
@@ -22,8 +24,18 @@ export default function Home() {
               <Title text={'Café & pastelería'} type={'h3'}/>
             </Grid>
           </Grid>
-          <Grid item>
+          <Grid item sx={{display:'flex', flexWrap:'wrap', justifyContent:'center'}}>
               <InfoCard data={infoCardData}/>
+              <CTAButton linkTo='https://alacartaonline.com.ar/restaurant/6001b2e3feb46a6a4347c483'>Ver carta</CTAButton>
+          </Grid>
+          <Grid item>
+              <Title text={'Cuidado & belleza'} type={'h3'}/>
+          </Grid>
+          <Grid item sx={{display:'flex', flexWrap:'wrap', justifyContent:['unset', 'space-evenly'], maxWidth:['315px', 'unset'], margin:['0 auto', 'unset']}}>
+              <SectionCard />
+          </Grid>
+          <Grid item sx={{display:'flex', flexWrap:'wrap', justifyContent:'center'}}>
+            <CTAButton linkTo={'/servicios'}>Quiero ver todos</CTAButton>
           </Grid>
         </Container>
       </main>
