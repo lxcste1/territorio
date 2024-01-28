@@ -14,7 +14,9 @@
     "@fontsource/aleo": "^5.0.19",
     "@mui/icons-material": "^5.15.6",
     "@mui/material": "^5.15.6",
+    "axios": "^1.6.7",
     "next": "14.0.4",
+    "papaparse": "^5.4.1",
     "react": "^18",
     "react-dom": "^18",
     "react-responsive": "^9.0.2"

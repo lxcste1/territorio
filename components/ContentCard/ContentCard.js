@@ -3,8 +3,6 @@ import Image from 'next/image'
 import { Grid, Typography } from '@mui/material'
 
 export default function ContentCard({data}) {
-
-    console.log(data)
   return (
     <>
         {data?.map((e) => (
