@@ -56,8 +56,6 @@ export default function Services({ services }) {
       </Grid>
     </Container>
   )
-
-  // return <div>{JSON.stringify(services)}</div>
 }
 
 export const getStaticProps = async () => {

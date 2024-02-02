@@ -15,7 +15,7 @@ export default function Showcase({ data }) {
   return (
     <>
       <Card sx={{ width: 315, margin:'1rem', border:'2px solid #C1AC99', borderRadius:'0px', boxShadow:'unset' }}>
-        <CardActionArea href={`/servicios/${data.slug}`} sx={{":hover":{backgroundColor:'#FFF3E3'}}}>
+        <CardActionArea href={`/servicios/${encodeURIComponent(data.slug)}`} sx={{":hover":{backgroundColor:'#FFF3E3'}}}>
           <CardMedia
             sx={{ height: 315 }}
             image={data.image}
