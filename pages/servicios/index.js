@@ -1,29 +1,57 @@
-import React from 'react';
+import React, { useState } from 'react';
 import getServices from '@/service/api';
 
-import { Container, Grid } from '@mui/material';
-
+import { Container, Grid, ToggleButtonGroup, ToggleButton, Typography } from '@mui/material';
+import Showcase from '@/components/Showcase/Showcase';
 
 export default function Services({ services }) {
-  // return (
-  //   <div>
-  //     {services && services.length > 0 ? (
-  //       <ul>
-  //         {services.map((service, index) => (
-  //           <li key={index}>{service}</li>
-  //         ))}
-  //       </ul>
-  //     ) : (
-  //       <p>No hay servicios disponibles.</p>
-  //     )}
-  //   </div>
-  // );
+  const [service, setService] = useState('');
+
+  const handleChange = (event, newService) => {
+    setService(newService); 
+  };
+
+  const uniqueServices = new Set();
+  const filteredServices = services.filter((e) => {
+    if (!uniqueServices.has(e.service)) {
+      uniqueServices.add(e.service);
+      return true;
+    }
+    return false;
+  });
+
+  const showService = services.filter((item) => item.service == service)
 
   return (
-    <Container>
-      <Grid container>
+    <Container sx={{paddingTop:'7rem', textAlign:'center'}}>
+      <Grid container justifyContent={'center'}>
         <Grid item md={12}>
-        
+          <Typography variant='h4'>
+            ¿Que servicio querés ver?
+          </Typography>
+        </Grid>
+        <Grid item md={12}>
+          <ToggleButtonGroup
+            color="primary"
+            value={service}
+            exclusive
+            onChange={handleChange}
+            aria-label="Platform"
+          >
+            {filteredServices.map((e, i) => (
+                <ToggleButton key={i} value={e.service} sx={{backgroundColor:'#FFF3E3 !important', margin:'1rem', border:'unset', borderRadius:'8px!important', textTransform:'inherit', fontWeight:'600', ":hover":{backgroundColor:'#C1AC99!important'}, "&.Mui-selected":{backgroundColor:'#C1AC99!important', color:'#594F46'}}}>{e.service}</ToggleButton>
+            ))}
+          </ToggleButtonGroup>
+        </Grid>
+        <Grid item md={12} sx={{display:'flex', justifyContent:['center', 'start'], flexWrap:'wrap'}}>
+          {showService.length == 0 ? 
+            services.map((e, i) => (
+              <Showcase key={i} data={e} />
+            )) : 
+            showService.map((e, i) => (
+              <Showcase key={i} data={e} />
+            )) 
+          }
         </Grid>
       </Grid>
     </Container>
