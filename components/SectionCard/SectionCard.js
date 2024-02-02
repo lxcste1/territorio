@@ -9,19 +9,19 @@ export default function SectionCard() {
       title: "Uñas",
       imageMobile: `/500x300.svg`,
       imageDesktop: `/290x430.svg`,
-      url: "/servicios/unas"
+      url: "/servicios"
     },
     {
       title: "Pestañas",
       imageMobile: `/500x300.svg`,
       imageDesktop: `/290x430.svg`,
-      url: "/servicios/pestanas"
+      url: "/servicios"
     },
     {
       title: "Masajes",
       imageMobile: `/500x300.svg`,
       imageDesktop: `/290x430.svg`,
-      url: "/servicios/masajes"
+      url: "/servicios"
     },
   ];    
 
