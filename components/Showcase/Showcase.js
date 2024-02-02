@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Grid } from '@mui/material';
+import { Grid, Hidden } from '@mui/material';
 import Card from '@mui/material/Card';
 import { CardActionArea } from '@mui/material';
 import CardMedia from '@mui/material/CardMedia';
@@ -22,14 +22,14 @@ export default function Showcase({ data }) {
             title={data.title}
           />
           <CardContent>
-            <Typography gutterBottom variant="h5" component="div" sx={{minHeight:'65px', display:'flex', justifyContent:'center', alignItems:'center'}}>
+            <Typography gutterBottom variant="h5" component="div" sx={{minHeight:'100px', display:'flex', justifyContent:'center', alignItems:'center'}}>
               {data.title}
             </Typography>
             <Grid container sx={{justifyContent:'center', fontSize:'13px', alignItems:'center', lineHeight:'0', marginBottom:'1rem'}}>
               <Grid item sx={{fontWeight:'700', marginRight:'5px'}}>{data.price}</Grid><Grid item> | <AccessTimeIcon fontSize="small"/> {data.variation}</Grid>
             </Grid>
             <Divider variant="middle" sx={{width:'50%', margin:'0 auto', border:'1px solid #C1AC99', marginBottom:'1rem'}}/>
-            <Typography>
+            <Typography sx={{overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap'}}>
               {data.details}
             </Typography>
           </CardContent>

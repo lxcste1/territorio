@@ -14,6 +14,8 @@ export default function Product({service}) {
     const router = useRouter();
     const product = service.filter((item) => item.slug == router.query.slug)
 
+    const productDescription = product[0].description.split(',')
+
     return (
         <>
             {product.map((item, i) => (
@@ -62,14 +64,18 @@ export default function Product({service}) {
                                             <CTAButton linkTo={'/test'}>Sacar turno</CTAButton>
                                         </Box>
                                     </Grid>
-                                    <Grid item md={9} xs={12}>
+                                    <Grid item md={9} xs={12} sx={{marginY:'1rem'}}>
                                         <Typography variant='h4' sx={{fontWeight:'700'}}>
                                             Descripción
                                         </Typography>
                                         <Divider sx={{marginTop:'1rem', border:'1px solid #C1AC99', marginBottom:'1rem'}}/>
-                                        <Typography sx={{textAlign:'left'}}>
-                                            {item.description}
-                                        </Typography>
+                                        <Box sx={{textAlign:'left'}}>
+                                            {productDescription.map((e, i) =>(
+                                                <Typography key={i}>
+                                                    {e}
+                                                </Typography>
+                                            ))}
+                                        </Box>
                                     </Grid>
                                 </Grid>
                     </Container>
